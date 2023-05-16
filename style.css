@@ -3,16 +3,17 @@
   padding: 0;
 }
 
-.container {
+body {
   width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
 }
 
-.container>div {
+h1 {
+  margin: 20px 0 10px;
+  text-align: center;
+}
+
+.container {
   width: 80%;
   max-width: 700px;
   height: 80vh;
@@ -26,7 +27,7 @@
   box-shadow: rgba(255, 255, 255, 0.151) 0px 22px 70px 4px;
 }
 
-.container>div .header {
+.container>.header {
   display: grid;
   grid-template-columns: calc(45% - 10px) 10% calc(45% - 10px);
   gap: 10px;
@@ -62,11 +63,14 @@ button#change i {
 }
 
 .containerTextarea {
-  height: 95%;
   display: grid;
-  grid-template-columns: calc(50% - 8px) calc(50% - 8px);
-  column-gap: 16px;
-  margin-bottom: 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  height: 100%;
+}
+
+.containerTextarea>section.textareas {
+  height: 100%;
 }
 
 textarea {
@@ -93,6 +97,72 @@ textarea {
   cursor: pointer;
 }
 
-button.iconButton i:not(button#change i){
+button.iconButton i:not(button#change i) {
   font-size: 1.2rem;
+}
+
+
+/* Media Querys */
+@media (max-width: 500px) {
+  .container {
+    width: 80%;
+    max-width: 700px;
+    min-height: 600px;
+    border-radius: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 1.6rem;
+    box-shadow: rgba(255, 255, 255, 0.151) 0px 22px 70px 4px;
+  }
+
+  .container>.header {
+    display: grid;
+    grid-template-columns: calc(40% - 10px) 20% calc(40% - 10px);
+    gap: 10px;
+  }
+
+  button#change {
+    padding: 0;
+  }
+
+  button#change i {
+    display: block;
+    background: #FC354C;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0ABFBC, #FC354C);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin: 0 auto;
+    padding: 15px 0;
+    border-radius: 3px;
+    color: #fff;
+  }
+
+  .containerTextarea {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+  }
+
+  .containerTextarea>section.textareas {
+    height: 100%;
+    margin-bottom: 12px;
+  }
+
+  select {
+    font-size: 0.8rem;
+  }
+
+}
+
+
+@media (max-width: 420px) {
+  .container>.header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
 }
