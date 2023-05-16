@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <title>Translate with Translo API</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div>
+        <header class="header">
+          <select class="first"></select>
+          <button class="iconButton" id="change"><i class='bx bx-transfer-alt'></i></button>
+          <select class="second"></select>
+        </header>
+
+        <div class="containerTextarea">
+          <div>
+            <textarea class="fromText" placeholder="Enter Text"></textarea>
+            <div class="btnContainer">
+              <button class="read iconButton"><i class='bx bxs-volume-full'></i></button>
+              <button class="listen iconButton"><i class='bx bxs-microphone'></i></button>
+            </div>
+          </div>
+          <div>
+            <textarea class="toText" placeholder="Enter Text"></textarea>
+            <div class="btnContainer">
+              <button class="read iconButton"><i class='bx bxs-volume-full'></i></button>
+            </div>
+          </div>
+        </div>
+
+        <button class="translate">Translate</button>
+
+
+      </div>
+    </div>
+
+
+    <script src="script.js" type="module"></script>
+  </body>
+
+</html>

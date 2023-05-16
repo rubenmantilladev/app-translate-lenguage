@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.container>div {
+  width: 80%;
+  max-width: 700px;
+  height: 80vh;
+  max-height: 500px;
+  border-radius: 0.7rem;
+  display: grid;
+  grid-template-rows: 13% calc(75% - 20px) 12%;
+  row-gap: 10px;
+  padding: 1.6rem;
+
+  box-shadow: rgba(255, 255, 255, 0.151) 0px 22px 70px 4px;
+}
+
+.container>div .header {
+  display: grid;
+  grid-template-columns: calc(45% - 10px) 10% calc(45% - 10px);
+  gap: 10px;
+}
+
+.iconButton {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.iconButton i {
+  width: 100%;
+  height: 100%;
+  color: #FC354C;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+select {
+  margin: 0;
+}
+
+button#change i {
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.containerTextarea {
+  height: 95%;
+  display: grid;
+  grid-template-columns: calc(50% - 8px) calc(50% - 8px);
+  column-gap: 16px;
+  margin-bottom: 0;
+}
+
+textarea {
+  width: 100%;
+  height: 90%;
+  font-size: 1rem;
+  outline: none;
+  resize: none;
+  background: none;
+  border-radius: 5px;
+  margin-bottom: 0;
+}
+
+.translate {
+  background: #FC354C;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0ABFBC, #FC354C);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 1rem;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+button.iconButton i:not(button#change i){
+  font-size: 1.2rem;
+}
