@@ -11,6 +11,7 @@ const $translate = $(".translate");
 const $change = $("#change");
 const $from = $(".fromText");
 const $to = $(".toText");
+const $trash = $(".trash");
 // variables para lectores de voz
 const $readers = document.querySelectorAll(".read");
 // variables para los botones de lectura
@@ -106,4 +107,11 @@ $to.addEventListener("input", function (e) {
   const longMax = target.getAttribute("maxlength");
   const longActual = target.value.length;
   $contador2.innerHTML = `${longActual}/${longMax}`;
+});
+
+$trash.addEventListener("click", () => {
+  $from.value = "";
+  $to.value = "";
+  $contador1.innerHTML = `0/200`;
+  $contador2.innerHTML = `0/200`;
 });

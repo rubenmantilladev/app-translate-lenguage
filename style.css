@@ -59,12 +59,36 @@ div.btn-solo {
   grid-template-columns: 1fr;
 }
 
+button {
+  transition: all 0.2s;
+}
+
+button.translate {
+  font-size: 0.7rem;
+  font-weight: bold;
+  line-height: 1.1rem;
+}
+button.translate:hover {
+  color: #e4c859;
+}
+
+button.trash:hover {
+  color: #e74c3c;
+}
+
+button#change:hover {
+  color: #3498db;
+}
+
 /*------------------------ MEDIA QUERYS --------------------*/
 @media (min-width: 768px) {
   .container {
     display: grid;
     grid-template-rows: 10% 90%;
     grid-template-columns: 40% 20% 40%;
+    height: 100vh;
+    row-gap: 1rem;
+    margin-top: -30px;
   }
 
   h1 {
@@ -78,27 +102,28 @@ div.btn-solo {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70%;
     width: 80px;
-    margin: 0 auto;
+    margin: 0 auto auto;
   }
 
-  #change {
+  #change,
+  #trash {
     padding: 12px 0;
   }
 
-  #change i {
+  #change i,
+  #trash i {
     transform: rotate(0deg);
+    font-size: 1rem;
   }
 
-  /* ------------------------------------------------------ */
+  button.translate {
+    font-size: 0.8rem;
+  }
 
   /* --------------------SECCION TEXTAREAS----------------- */
-
   section.texareaTo,
   section.texareaFrom {
     margin: 0;
   }
-
-  /* ------------------------------------------------------ */
 }
