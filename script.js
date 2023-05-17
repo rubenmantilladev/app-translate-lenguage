@@ -77,6 +77,7 @@ $readers.forEach((read, index) => {
   });
 });
 
+// API de SpeechRecognition para la funcion de microfono
 var SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
@@ -89,4 +90,20 @@ recognition.onresult = (event) => {
 
 $listen.addEventListener("click", () => {
   recognition.start();
+});
+
+// Contador de caracteres
+const $contador1 = document.getElementById("contador1");
+$from.addEventListener("input", function (e) {
+  const target = e.target;
+  const longMax = target.getAttribute("maxlength");
+  const longActual = target.value.length;
+  $contador1.innerHTML = `${longActual}/${longMax}`;
+});
+const $contador2 = document.getElementById("contador2");
+$to.addEventListener("input", function (e) {
+  const target = e.target;
+  const longMax = target.getAttribute("maxlength");
+  const longActual = target.value.length;
+  $contador2.innerHTML = `${longActual}/${longMax}`;
 });

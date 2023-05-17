@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -8,161 +9,96 @@ body {
   height: 100vh;
 }
 
+.container {
+  width: 90%;
+}
+
 h1 {
-  margin: 20px 0 10px;
   text-align: center;
 }
 
-.container {
-  width: 80%;
-  max-width: 700px;
-  height: 80vh;
-  max-height: 500px;
-  border-radius: 0.7rem;
+.btnContainer {
   display: grid;
-  grid-template-rows: 13% calc(75% - 20px) 12%;
-  row-gap: 10px;
-  padding: 1.6rem;
-
-  box-shadow: rgba(255, 255, 255, 0.151) 0px 22px 70px 4px;
-}
-
-.container>.header {
-  display: grid;
-  grid-template-columns: calc(45% - 10px) 10% calc(45% - 10px);
-  gap: 10px;
-}
-
-.iconButton {
-  display: inline-block;
-  width: auto;
-  margin: 0;
-  padding: 3px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.iconButton i {
-  width: 100%;
-  height: 100%;
-  color: #FC354C;
-  font-size: 1.5rem;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: center;
-}
-
-select {
-  margin: 0;
-}
-
-button#change i {
-  margin: 0 auto;
-  padding-top: 15px;
-}
-
-.containerTextarea {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  height: 100%;
-}
-
-.containerTextarea>section.textareas {
-  height: 100%;
-}
-
-textarea {
-  width: 100%;
-  height: 90%;
-  font-size: 1rem;
-  outline: none;
-  resize: none;
-  background: none;
-  border-radius: 5px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   margin-bottom: 0;
 }
 
-.translate {
-  background: #FC354C;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #0ABFBC, #FC354C);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font-size: 1rem;
-  border: 0;
-  margin: 0;
-  cursor: pointer;
+textarea {
+  margin-bottom: 0.8rem;
+  resize: none;
 }
 
-button.iconButton i:not(button#change i) {
-  font-size: 1.2rem;
+.texareaTo {
+  margin-top: 2rem;
 }
 
+.btnsMain {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 15px;
+  border-radius: 5px;
+  background: #1095c1;
+}
 
-/* Media Querys */
-@media (max-width: 500px) {
+.btnsMain button {
+  margin-bottom: 0;
+  border: none;
+  outline: none;
+  background: #11191f;
+
+}
+
+#change i {
+  transform: rotate(90deg);
+}
+
+div.btn-solo {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/*------------------------ MEDIA QUERYS --------------------*/
+@media (min-width: 768px) {
   .container {
-    width: 80%;
-    max-width: 700px;
-    min-height: 600px;
-    border-radius: 0.7rem;
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-    padding: 1.6rem;
-    box-shadow: rgba(255, 255, 255, 0.151) 0px 22px 70px 4px;
-  }
-
-  .container>.header {
     display: grid;
-    grid-template-columns: calc(40% - 10px) 20% calc(40% - 10px);
-    gap: 10px;
+    grid-template-rows: 10% 90%;
+    grid-template-columns: 40% 20% 40%;
   }
 
-  button#change {
-    padding: 0;
+  h1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
   }
 
-  button#change i {
-    display: block;
-    background: #FC354C;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0ABFBC, #FC354C);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* -------------------BOTONES PRINCIPALES---------------- */
+  section.btnsMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 80px;
     margin: 0 auto;
-    padding: 15px 0;
-    border-radius: 3px;
-    color: #fff;
   }
 
-  .containerTextarea {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    height: 100%;
+  #change {
+    padding: 12px 0;
   }
 
-  .containerTextarea>section.textareas {
-    height: 100%;
-    margin-bottom: 12px;
+  #change i {
+    transform: rotate(0deg);
   }
 
-  select {
-    font-size: 0.8rem;
+  /* ------------------------------------------------------ */
+
+  /* --------------------SECCION TEXTAREAS----------------- */
+
+  section.texareaTo,
+  section.texareaFrom {
+    margin: 0;
   }
 
-}
-
-
-@media (max-width: 420px) {
-  .container>.header {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
+  /* ------------------------------------------------------ */
 }
