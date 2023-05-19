@@ -46,22 +46,22 @@ $change.addEventListener("click", () => {
 });
 
 // API de TRANSLO
-const url = "https://translo.p.rapidapi.com/api/v3/translate";
+const url = "https://text-translator2.p.rapidapi.com/translate";
 const OPTIONS = {
   method: "POST",
   headers: {
-    "content-type": "application/x-www-form-urlencoded",
-    "X-RapidAPI-Key": "9341292fbbmsh632461f34cf4937p10906ajsn4d8342ddc3e6",
-    "X-RapidAPI-Host": "translo.p.rapidapi.com",
-  },
+		'content-type': 'application/x-www-form-urlencoded',
+		'X-RapidAPI-Key': '9341292fbbmsh632461f34cf4937p10906ajsn4d8342ddc3e6',
+		'X-RapidAPI-Host': 'text-translator2.p.rapidapi.com'
+	},
 };
 
 // funcion para traducir
 $translate.addEventListener("click", async () => {
   if (!$from.value) return;
   OPTIONS.body = new URLSearchParams({
-    from: $selectFirst.value,
-    to: $selectSecond.value,
+    source_language: $selectFirst.value,
+    target_language: $selectSecond.value,
     text: $from.value,
   });
   const res = await fetch(url, OPTIONS);
