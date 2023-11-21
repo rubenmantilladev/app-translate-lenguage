@@ -8,7 +8,7 @@
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/Roboto-Regular.woff2") format("woff2");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -27,7 +27,7 @@ body {
 }
 
 .title {
-  margin: 4rem 0;
+  margin: 3rem 0;
   color: #3498db;
   font-size: 2.5rem;
 }
