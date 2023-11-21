@@ -46,8 +46,7 @@ $change.addEventListener("click", () => {
 });
 
 // funcion para traducir
-$translate.addEventListener("click", async () => {
-  if (!$from.value) return;
+async function translate() {
   try {
     const url = "https://text-translator2.p.rapidapi.com/translate";
     const OPTIONS = {
@@ -69,6 +68,20 @@ $translate.addEventListener("click", async () => {
   } catch (error) {
     console.log(error);
     return;
+  }
+}
+
+// funcion para traducir al dar click
+$translate.addEventListener("click", () => {
+  if (!$from.value) return;
+  translate();
+});
+
+$from.addEventListener("keydown", (e) => {
+  if (!$from.value) return;
+  // Si se presiona Ctrl + Enter
+  if (e.ctrlKey && e.keyCode === 13) {
+    translate();
   }
 });
 

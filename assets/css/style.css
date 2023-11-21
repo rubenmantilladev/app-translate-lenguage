@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  background: #11191f;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 4rem 0;
+  color: #3498db;
+  font-size: 2.5rem;
+}
+
+.container-sections {
+  position: relative;
+  display: flex;
+  gap: 4rem;
+}
+
+.section-item {
+  flex: 1;
+  color: #fff;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0;
+
+  & button {
+    width: fit-content;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    margin: -4.8rem 0 0 0.8rem;
+    cursor: pointer;
+    z-index: 1;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: #e4c859;
+    }
+
+    &:focus {
+      animation: pulse 1s infinite;
+    }
+  }
+}
+
+label {
+  margin-bottom: 0.5rem;
+  color: #e4c859;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+select {
+  appearance: none;
+  margin-bottom: 0.8rem;
+  margin-left: 0.5rem;
+  background: #1f2a36;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  outline: none;
+  font-size: 1.2rem;
+  background: url("../img/arrow-down.svg") no-repeat right 0.5rem center;
+}
+
+option {
+  background: #1f2a36;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+option[selected] {
+  background: #e4c859;
+  color: #11191f;
+}
+
+textarea {
+  margin-bottom: 0.8rem;
+  resize: vertical;
+  width: 100%;
+  background: #1f2a36;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+.contador {
+  float: right;
+  position: relative;
+  margin-top: -3rem;
+  margin-right: 1rem;
+}
+
+.btnsMain {
+  /* TODO: */
+  margin: 0 auto;
+
+  & .translate {
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    background: #3498db;
+    color: #11191f;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    line-height: 1.1rem;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background: #e4c859;
+      color: #1f2a36;
+    }
+
+    &:hover {
+      .container-svg svg path {
+        fill: #1f2a36;
+      }
+
+      .container-svg svg {
+        animation: rotate 0.5s ease-in-out;
+      }
+    }
+  }
+}
+
+.container-svg {
+  display: inline-block;
+  overflow: hidden;
+
+  & svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
+.btnsMain button {
+  margin-bottom: 0;
+  border: none;
+  outline: none;
+  background: #11191f;
+}
+
+div.btn-solo {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.btn-medium {
+  position: absolute;
+  left: 50%;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 1.5rem;
+  color: #fff;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.exchange {
+  top: 0.5rem;
+  margin-left: -0.75rem;
+}
+
+.trash {
+  bottom: 1rem;
+  margin-left: -0.75rem;
+
+  &:hover {
+    color: #e74c3c;
+    animation: ring 0.3s ease-in-out 2;
+  }
+}
+
+button#change:hover {
+  color: #3498db;
+}
+
+/*------------------------ MEDIA QUERYS --------------------*/
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    min-height: 1280px;
+  }
+
+  .container-sections {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .container-actions-medium {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem !important;
+    gap: 2rem;
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  .btn-medium {
+    position: static;
+    margin: 0 auto;
+  }
+
+  .trash {
+    color: #e74c3c;
+  }
+
+  .exchange {
+    color: #3498db;
+    transform: rotate(90deg);
+  }
+
+  /* -------------------BOTONES PRINCIPALES---------------- */
+  .btnsMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    margin: 0 auto auto;
+  }
+
+  #change i,
+  #trash i {
+    font-size: 1.5rem;
+  }
+
+  button.translate {
+    font-size: 0.8rem;
+  }
+
+  /* --------------------SECCION TEXTAREAS----------------- */
+  .texareaTo,
+  .texareaFrom {
+    margin: 0;
+  }
+}
+
+/* ----------------- Keyframes Animations ----------------- */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  22% {
+    transform: rotate(5deg);
+  }
+  77% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
