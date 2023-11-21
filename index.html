@@ -28,16 +28,16 @@
         <article class="section-item texareaFrom">
           <label for="from">From: </label>
           <select id="from" class="first"></select>
-          <!--           <small style="margin: 0.5rem 0 0.2rem 0; font-size: 0.8rem"
-            >Press CTRL + ENTER to translate</small
-          > -->
           <div class="textareas">
             <textarea
               class="fromText"
               rows="10"
               maxlength="500"
-              placeholder="Enter your text"
+              placeholder="Enter your text and press CTRL + ENTER to translate"
             ></textarea>
+            <button class="btn-loading" id="btn-loading">
+              <i class="bx bx-loader-alt bx-spin"></i>
+            </button>
             <div class="btnContainer">
               <button class="read iconButton">
                 <i class="bx bxs-volume-full"></i>
@@ -70,8 +70,12 @@
               class="toText"
               rows="10"
               maxlength="500"
-              placeholder="Enter your text"
+              placeholder="Here is your translation"
+              readonly
             ></textarea>
+            <button class="btn-copy" id="btn-copy">
+              <i class="bx bx-copy-alt"></i>
+            </button>
             <div class="btnContainer btn-solo">
               <button class="read iconButton">
                 <i class="bx bxs-volume-full"></i>

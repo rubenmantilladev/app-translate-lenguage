@@ -19,6 +19,11 @@ const $listen = $(".listen");
 // variables para los lenguajes por defecto
 const languages1 = "es";
 const languages2 = "en";
+// btn para copiar texto
+const $copy = $("#btn-copy");
+
+// Loading
+const $loading = $("#btn-loading");
 
 for (const i in languages) {
   // obteniendo el key y value de cada objeto
@@ -48,6 +53,7 @@ $change.addEventListener("click", () => {
 // funcion para traducir
 async function translate() {
   try {
+    $loading.style.visibility = "visible";
     const url = "https://text-translator2.p.rapidapi.com/translate";
     const OPTIONS = {
       method: "POST",
@@ -62,7 +68,9 @@ async function translate() {
         text: $from.value,
       }),
     };
-    const res = await fetch(url, OPTIONS);
+    const res = await fetch(url, OPTIONS).finally(() => {
+      $loading.style.visibility = "hidden";
+    });
     const data = await res.json();
     $to.value = data.data.translatedText;
   } catch (error) {
@@ -94,9 +102,11 @@ $readers.forEach((read, index) => {
 });
 
 // API de SpeechRecognition para la funcion de microfono
-var SpeechRecognition =
-  window.SpeechRecognition || window.webkitSpeechRecognition;
-var recognition = new SpeechRecognition();
+if ("SpeechRecognition" in window || "webkitSpeechRecognition" in window) {
+  var SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+  var recognition = new SpeechRecognition();
+}
 
 recognition.onresult = (event) => {
   const res = event.results[0][0].transcript;
@@ -105,8 +115,23 @@ recognition.onresult = (event) => {
 };
 
 $listen.addEventListener("click", () => {
+  // Iniciando el microfono
   recognition.start();
+  // Capturando el evento de inicio
+  recognition.onstart = () => {
+    console.log("Se inicio el microfono");
+  };
+  // Capturando el evento de finalizacion
+  recognition.onend = () => {
+    console.log("Se detuvo el microfono");
+  };
 });
+
+$copy.addEventListener("click", copyText);
+function copyText() {
+  if (!$to.value) return;
+  navigator.clipboard.writeText($to.value);
+}
 
 // Contador de caracteres
 const $contador1 = document.getElementById("contador1");
@@ -130,3 +155,14 @@ $trash.addEventListener("click", () => {
   $contador1.innerHTML = `0/500`;
   $contador2.innerHTML = `0/500`;
 });
+
+// Cambiar el contenido del boton de copiar al dar click
+$copy.addEventListener("click", () => {
+  $copy.innerHTML = `<i class="bx bx-check"></i>`;
+  setTimeout(() => {
+    $copy.innerHTML = `<i class="bx bx-copy-alt"></i>`;
+  }, 800);
+});
+
+// Focus en el textarea
+$from.focus();

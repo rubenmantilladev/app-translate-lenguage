@@ -23,6 +23,7 @@ body {
   margin: 2rem auto 0;
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
 }
 
 .title {
@@ -40,6 +41,10 @@ body {
 .section-item {
   flex: 1;
   color: #fff;
+}
+
+.textareas {
+  position: relative;
 }
 
 .btnContainer {
@@ -88,6 +93,7 @@ select {
   padding: 0.5rem;
   outline: none;
   font-size: 1.2rem;
+  line-height: 1.5rem;
   background: url("../img/arrow-down.svg") no-repeat right 0.5rem center;
 }
 
@@ -211,6 +217,44 @@ div.btn-solo {
 
 button#change:hover {
   color: #3498db;
+}
+
+.btn-copy {
+  position: absolute;
+  right: 0;
+  margin-top: 0.7rem;
+  margin-right: 0.7rem;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.2rem;
+  border: 1px solid #fff;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background: #e4c859;
+    color: #11191f;
+    border: 1px solid #e4c859;
+  }
+}
+
+.btn-loading {
+  position: absolute;
+  right: 0;
+  margin-top: 0.7rem;
+  margin-right: 0.7rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  z-index: 1;
+
+  visibility: hidden;
 }
 
 /*------------------------ MEDIA QUERYS --------------------*/
