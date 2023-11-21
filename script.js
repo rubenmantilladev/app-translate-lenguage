@@ -46,28 +46,32 @@ $change.addEventListener("click", () => {
 });
 
 // API de TRANSLO
-const url = "https://text-translator2.p.rapidapi.com/translate";
-const OPTIONS = {
-  method: "POST",
-  headers: {
-		'content-type': 'application/x-www-form-urlencoded',
-		'X-RapidAPI-Key': '9341292fbbmsh632461f34cf4937p10906ajsn4d8342ddc3e6',
-		'X-RapidAPI-Host': 'text-translator2.p.rapidapi.com'
-	},
-};
 
 // funcion para traducir
 $translate.addEventListener("click", async () => {
   if (!$from.value) return;
-  OPTIONS.body = new URLSearchParams({
-    source_language: $selectFirst.value,
-    target_language: $selectSecond.value,
-    text: $from.value,
-  });
-  const res = await fetch(url, OPTIONS);
-  const data = await res.json();
-  $to.value = data.translated_text;
-  console.log(data.translated_text);
+  try {
+    const url = "https://text-translator2.p.rapidapi.com/translate";
+    const OPTIONS = {
+      method: "POST",
+      headers: {
+        "content-type": "application/x-www-form-urlencoded",
+        "X-RapidAPI-Key": "65b7ceac59mshab258e964e0b131p171c50jsn97f6dfdb82ac",
+        "X-RapidAPI-Host": "text-translator2.p.rapidapi.com",
+      },
+      body: new URLSearchParams({
+        source_language: $selectFirst.value,
+        target_language: $selectSecond.value,
+        text: $from.value,
+      }),
+    };
+    const res = await fetch(url, OPTIONS);
+    const data = await res.json();
+    $to.value = data.data.translatedText;
+  } catch (error) {
+    console.log(error);
+    return;
+  }
 });
 
 $readers.forEach((read, index) => {
@@ -112,6 +116,6 @@ $to.addEventListener("input", function (e) {
 $trash.addEventListener("click", () => {
   $from.value = "";
   $to.value = "";
-  $contador1.innerHTML = `0/200`;
-  $contador2.innerHTML = `0/200`;
+  $contador1.innerHTML = `0/500`;
+  $contador2.innerHTML = `0/500`;
 });

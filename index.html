@@ -1,57 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
     <title>Translate with Translo API</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <main class="container">
-
       <h1>Translo Translator</h1>
       <section class="section texareaFrom">
         <select class="first"></select>
         <div class="textareas">
-
-          <textarea class="fromText" rows="10" maxlength="200" placeholder="Enter your text"></textarea>
-          <small id="contador1">0/200</small>
+          <textarea
+            class="fromText"
+            rows="10"
+            maxlength="500"
+            placeholder="Enter your text"
+          ></textarea>
+          <small id="contador1">0/500</small>
 
           <div class="btnContainer">
-            <button class="read iconButton"><i class='bx bxs-volume-full'></i></button>
-            <button class="listen iconButton"><i class='bx bxs-microphone'></i></button>
+            <button class="read iconButton">
+              <i class="bx bxs-volume-full"></i>
+            </button>
+            <button class="listen iconButton">
+              <i class="bx bxs-microphone"></i>
+            </button>
           </div>
         </div>
       </section>
 
       <section class="btnsMain">
-        <button class="iconButton" id="change"><i class='bx bx-transfer-alt'></i></button>
+        <button class="iconButton" id="change">
+          <i class="bx bx-transfer-alt"></i>
+        </button>
         <button class="translate">TRANSLATE</button>
-        <button class="iconButton trash" id="trash"><i class='bx bxs-trash'></i></button>
+        <button class="iconButton trash" id="trash">
+          <i class="bx bxs-trash"></i>
+        </button>
       </section>
 
       <section class="section texareaTo">
-
         <select class="second"></select>
         <div class="textareas">
-
-          <textarea class="toText" rows="10" maxlength="200" placeholder="Enter your text"></textarea>
-          <small id="contador2">0/200</small>
+          <textarea
+            class="toText"
+            rows="10"
+            maxlength="500"
+            placeholder="Enter your text"
+          ></textarea>
+          <small id="contador2">0/500</small>
           <div class="btnContainer btn-solo">
-            <button class="read iconButton"><i class='bx bxs-volume-full'></i></button>
+            <button class="read iconButton">
+              <i class="bx bxs-volume-full"></i>
+            </button>
           </div>
         </div>
       </section>
     </main>
 
-
     <script src="script.js" type="module"></script>
   </body>
-
 </html>
