@@ -45,8 +45,6 @@ $change.addEventListener("click", () => {
   [$from.value, $to.value] = [$to.value, $from.value];
 });
 
-// API de TRANSLO
-
 // funcion para traducir
 $translate.addEventListener("click", async () => {
   if (!$from.value) return;
